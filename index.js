@@ -12,7 +12,7 @@ function getResults(){
     const searchValue = searchInput.value
     let defaultPgContainer = document.getElementById('default-pg-container')
 
-    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=63af26dd&t=${searchValue}`)
+    fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=63af26dd&t=${searchValue}`)
         .then(res => res.json())
         .then(movie => {
      
