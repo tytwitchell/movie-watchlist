@@ -56,17 +56,34 @@ function getMovieListHtml(){
                             <p  class="runtime">${item.Runtime}</p>
                             <p class="genre">${item.Genre}</p>
                             <button class="remove-btn" id="remove-btn-${item.imdbID}" data-imdbid="${item.imdbID}">
-                                <img src="images/remove.png" alt='remove button icon' class="remove-icon"/> 
                                 Remove
                             </button>
                         </div>
-                        <p class="plot">${item.Plot}</p>
+                        <div class="plot">
+                            <p class="plot-content">
+                                ${item.Plot}
+                            </p>
+                            <button class="read-more-btn">...Read more</button>
+                        </div>
                     </div>
                 `
             }
 
         }
-        
+
+    document.querySelectorAll('.read-more-btn').forEach(button => {
+    
+        button.addEventListener('click', function () {
+            const plotContent = this.previousElementSibling;
+                if (plotContent.style.maxHeight) {
+                    plotContent.style.maxHeight = null;
+                    this.textContent = '...Read More';
+                } else {
+                    plotContent.style.maxHeight = plotContent.scrollHeight + 'px';
+                    this.textContent = 'Read Less';
+                }
+        })
+    })
     if (!hasMovies) {
         defaultPgContainer.innerHTML = `
             <h3 class="default-txt">Your watchlist is looking a little empty...</h3>

@@ -27,16 +27,35 @@ function getResults(){
                     <div class="time-genre-btn-container">
                         <p  class="runtime">${movie.Runtime}</p>
                         <p class="genre">${movie.Genre}</p>
-
-                        <button class="watchlist-btn" id="watchlist-btn-${movie.imdbID}" data-imdbid="${movie.imdbID}">
-                            <img src="images/add.png" alt='add button icon' class="add-icon" id="add-icon-${movie.imdbID}"/> 
-                            Watchlist
-                        </button>
+                        <div id="movie-btn-${movie.imdbID}">
+                            <button class="watchlist-btn" id="watchlist-btn-${movie.imdbID}" data-imdbid="${movie.imdbID}">
+                                Watchlist
+                            </button>
+                        </div>
                     </div>
-                    <p class="plot">${movie.Plot}</p>
+                    <div class="plot">
+                        <p class="plot-content">
+                            ${movie.Plot}
+                        </p>
+                    <button class="read-more-btn">...Read more</button>
+                    </div>
                 </div>
             `
         movieResults.push(movie)
+
+        document.querySelectorAll('.read-more-btn').forEach(button => {
+            
+            button.addEventListener('click', function () {
+                const plotContent = this.previousElementSibling;
+                    if (plotContent.style.maxHeight) {
+                        plotContent.style.maxHeight = null;
+                        this.textContent = '...Read More';
+                    } else {
+                        plotContent.style.maxHeight = plotContent.scrollHeight + 'px';
+                        this.textContent = 'Read Less';
+                    }
+            })
+        })
 
 
         document.getElementById(`watchlist-btn-${movie.imdbID}`).addEventListener('click', e => {
@@ -76,9 +95,11 @@ function getResults(){
                 localStorage.setItem(`movie-${movie.imdbID}`, JSON.stringify(movieData))
                 setTimeout(displaySuccessMessage,300)
 
-                document.getElementById(`watchlist-btn-${movie.imdbID}`).innerHTML = `
-                    <img src="images/circle-check.png" alt='add button icon' class="add-icon" id="add-icon-${movie.imdbID}"/> 
-                    Added to watchlist!
+                document.getElementById(`movie-btn-${movie.imdbID}`).innerHTML = `
+                    <div class="added-txt-container">
+                        <img src="images/circle-check.png" alt='add button icon' class="add-icon" id="add-icon-${movie.imdbID}"/> 
+                        <p class="added-txt">Added!</p>
+                    </div>
                 `
                 document.getElementById(`watchlist-btn-${movie.imdbID}`).classList.add('success-style')
                 
@@ -96,9 +117,8 @@ function getResults(){
                 console.log('this item already exists')
 
                 document.getElementById(`watchlist-btn-${movie.imdbID}`).classList.add('error-style')
-                document.getElementById(`add-icon-${movie.imdbID}`).classList.add('error-style')
 
-                setTimeout(displayErrorMessage,500)
+                setTimeout(displayErrorMessage,300)
                 setTimeout(() => {
                     const popUp = document.querySelector('.added-pop-up, .error-pop-up');
                     if (popUp) {
