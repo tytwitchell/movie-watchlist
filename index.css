@@ -94,6 +94,7 @@ nav {
     background-position-x: 10px;
     padding: 8px 38px;
     margin-left: auto;
+    margin-right: 0;
     border-radius: 6px;
     border: 1px solid #D1D5DB;
     border-top-right-radius: 0px;
@@ -115,6 +116,7 @@ nav {
     color: gray;
     padding: 8px 38px;
     margin-right: auto;
+    margin-left: 0;
     align-self: center;
     border-left: none;
 }
@@ -390,7 +392,7 @@ nav {
         margin: 0;
         padding: 0;
         font-family: 'Inter', sans-serif;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .search-container {
