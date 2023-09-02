@@ -20,6 +20,7 @@ nav {
     height: 208px;
     max-width: 765px;
     margin: 0 auto;
+    
 }
 
 .nav-elements > h1 {
@@ -28,6 +29,7 @@ nav {
     font-weight: 800;
     font-size: 2.69em;
     margin: 0;
+
 }
 
 .nav-elements > .my-watchlist-btn {
@@ -38,6 +40,7 @@ nav {
     font-weight: bold;
     font-size: .875em;
     margin: 0;
+    
 }
 
 /***** buttons and inputs ******/
@@ -69,7 +72,6 @@ nav {
 .read-more-btn:focus  {
     opacity: .85;
     transform: scale(.975);
-
 }
 
 /************** search bar ***************/
@@ -102,7 +104,6 @@ nav {
     min-width: 65%;
     outline: 0;
     color: gray;
-
 }
 
 .search-btn {
@@ -129,13 +130,14 @@ nav {
     align-items: center;
     justify-content: flex-start;
     height: 100vh;
-    margin-top: 75px;
+    margin-top: 80px;
 }
 
 .default-txt {
     color: #DFDDDD;
     font-size: 1.125em;
-    margin: 15px;
+    margin: 20px;
+    text-align: center;
 }
 
 /***** movie results style ******/
@@ -148,6 +150,7 @@ nav {
     /* border-bottom: 2px solid #E5E7EB; */
     margin: 0 15px;
     gap: 10px;
+    
 }
 
 
@@ -403,7 +406,7 @@ nav {
     }
 
     .default-pg-container {
-        margin-top: 50px;
+        margin-top: 80px;
     }
 }
 
