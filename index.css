@@ -307,6 +307,7 @@ nav {
 
 .added-pop-up,
 .error-pop-up{
+    font-size: .8em;
     position: fixed;
     display: flex;
     align-items: center;
