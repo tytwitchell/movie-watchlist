@@ -145,7 +145,7 @@ nav {
     grid-template-columns: auto auto;
     grid-template-rows: 1em auto auto auto 1em;
     padding: 25px 0;
-    border-bottom: 2px solid #E5E7EB;
+    /* border-bottom: 2px solid #E5E7EB; */
     margin: 0 15px;
     gap: 10px;
 }
@@ -215,6 +215,7 @@ nav {
 }
 
   .read-more-btn {
+    -webkit-appearance: none;
     font-family: inherit;
     color: #6B7280;
     background: none;
@@ -255,7 +256,8 @@ nav {
     font-weight: 500;
     border: none;
     background: none;
-    padding: 0
+    padding: 0;
+    -webkit-appearance: none;
 }
 
 .watchlist-btn {
