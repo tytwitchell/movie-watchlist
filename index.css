@@ -154,7 +154,6 @@ nav {
     padding: 25px 0;
     width: 75%;
     max-width: 600px;  
-    border: 1px solid
 }
 
 
@@ -170,9 +169,9 @@ nav {
 .title-rating-container {
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin-left: 15px;
-    margin-bottom: 10px;
+    gap: .313em;
+    margin-left: .938em;
+    margin-bottom: .625em;
     margin-top: 1.25em;
 }
 
@@ -180,15 +179,15 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 5px;
-    margin-left: 15px;
-    margin-bottom: 10px;
+    gap: .313em;
+    margin-left: .938em;
+    margin-bottom: .625em;
 }
 
 .title {
     font-size: 1.125em;
     font-weight: 500;
-    margin-right: 10px;
+    margin-right: .625em;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -202,7 +201,7 @@ nav {
     font-size: .875em;
     font-weight: 300;
     margin: 0;
-    margin-left: 15px;
+    margin-left: .938em;
     color: #6B7280;
     max-height: calc(1.2em * 3);
     max-width: 250px;
@@ -392,7 +391,7 @@ nav {
         margin: 0;
         padding: 0;
         font-family: 'Inter', sans-serif;
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .search-container {
@@ -400,7 +399,7 @@ nav {
     }
 
     .default-pg-container {
-        margin-top: 80px;
+        margin-top: 60px;
     }
 }
 
