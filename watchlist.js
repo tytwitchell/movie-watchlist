@@ -4,7 +4,8 @@ document.getElementById('home-pg-btn').addEventListener('click', getHomePgHtml)
 
 let storageKeys = []
 
-
+console.log('local', localStorage)
+console.log('keys', storageKeys)
 function getHomePgHtml(){
     window.location.href = 'index.html';
 }
@@ -30,40 +31,40 @@ function removeMovieFromStorage() {
 function getMovieListHtml(){
     const defaultPgContainer = document.getElementById("default-pg-container")
 
-    console.log(localStorage)
-
     defaultPgContainer.innerHTML = ''
     let hasMovies = false
 
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
-
+    
             if (key.startsWith('movie-')){
                 hasMovies = true
                 storageKeys.push(key)
     
                 const item = JSON.parse(localStorage.getItem(key));
-    
+                console.log('this item:', item)
                 defaultPgContainer.innerHTML += `
                     <div class="results-container">
                         <img src='${item.Poster}' alt='poster' class="poster"/>
-                        <div class="title-rating-container">
-                            <h3 class="title">${item.Title}</h3>
-                            <img src="images/star.png" alt='star rating'/>
-                            <p class="rating">${item.Rating}</p>
-                        </div>
-                        <div class="time-genre-btn-container">
-                            <p  class="runtime">${item.Runtime}</p>
-                            <p class="genre">${item.Genre}</p>
-                            <button class="remove-btn" id="remove-btn-${item.imdbID}" data-imdbid="${item.imdbID}">
-                                Remove
-                            </button>
-                        </div>
-                        <div class="plot">
-                            <p class="plot-content">
-                                ${item.Plot}
-                            </p>
-                            <button class="read-more-btn">...Read more</button>
+                        <div>
+                            <div class="title-rating-container">
+                                <h3 class="title">${item.Title}</h3>
+                                <img src="images/star.png" alt='star rating'/>
+                                <p class="rating">${item.Rating}</p>
+                            </div>
+                            <div class="time-genre-btn-container">
+                                <p  class="runtime">${item.Runtime}</p>
+                                <p class="genre">${item.Genre}</p>
+                                <button class="remove-btn" id="remove-btn-${item.imdbID}" data-imdbid="${item.imdbID}">
+                                    Remove
+                                </button>
+                            </div>
+                            <div class="plot">
+                                <p class="plot-content">
+                                    ${item.Plot}
+                                </p>
+                                <button class="read-more-btn">...Read more</button>
+                            </div>
                         </div>
                     </div>
                 `

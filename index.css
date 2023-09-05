@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -143,20 +147,17 @@ nav {
 /***** movie results style ******/
 
 .results-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: 1em auto auto auto 1em;
-    padding: 25px 0;
-    /* border-bottom: 2px solid #E5E7EB; */
-    margin: 0 15px;
+    display: flex;
     gap: 10px;
-    
+    margin: 0 25px;
+    border-bottom: 2px solid #E5E7EB;
+    padding: 25px 0;
+    width: 75%;
+    max-width: 600px;  
 }
 
 
 .poster {
-    grid-column: 1;
-    grid-row: 1 / -1;
     align-self: center;
     width: 6.188em;
     max-height: 9.213em;
@@ -166,25 +167,21 @@ nav {
 
 
 .title-rating-container {
-    grid-column: 2;
-    grid-row: 2;
     display: flex;
     align-items: center;
     gap: 5px;
     margin-left: 15px;
-    /* padding-top: 1.25em; */
- 
+    margin-bottom: 10px;
+    margin-top: 1.25em;
 }
 
 .time-genre-btn-container {
-    grid-column: 2 / -1;
-    grid-row: 3;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 5px;
     margin-left: 15px;
-
+    margin-bottom: 10px;
 }
 
 .title {
@@ -196,10 +193,7 @@ nav {
 }
 
 .plot {
-    grid-column: 2 / span 2;
-    grid-row: 4;
     display: flex;
-    align-items: baseline;
     max-height: 60px;
 }
 
@@ -209,12 +203,11 @@ nav {
     margin: 0;
     margin-left: 15px;
     color: #6B7280;
-    max-height: calc(1.2em * 3);
-    max-width: 342px;
-    white-space: normal;
-    text-overflow: ellipsis;
+    /* max-height: calc(1.2em * 8); */
+    /* max-width: 250px; */
+    /* white-space: normal;
     overflow: hidden;
-
+    text-overflow: ellipsis; */
 }
 
   .read-more-btn {
