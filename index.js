@@ -41,6 +41,7 @@ function getResults(){
                                         <p class="plot-content">
                                             ${Plot}
                                         </p>
+                                        <button class="read-more-btn">...Read more</button>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +53,7 @@ function getResults(){
                                 const plotContent = this.previousElementSibling;
                                     if (plotContent.style.maxHeight) {
                                         plotContent.style.maxHeight = null;
-                                        this.textContent = 'Read More';
+                                        this.textContent = '...Read More';
                                     } else {
                                         plotContent.style.maxHeight = plotContent.scrollHeight + 'px';
                                         this.textContent = 'Read Less';
