@@ -1,11 +1,12 @@
 *{
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+    font-size: 20px;
 }
 
 /******** header *******/
@@ -132,9 +133,9 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-    margin-top: 80px;
+    justify-content: center;
+    /* height: 100vh; */
+    margin-top: 125px;
 }
 
 .default-txt {
@@ -198,7 +199,7 @@ nav {
 }
 
 .plot-content {
-    font-size: .875em;
+    font-size: .8em;
     font-weight: 300;
     margin: 0;
     margin-left: .938em;
