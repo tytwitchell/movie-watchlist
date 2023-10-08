@@ -96,7 +96,25 @@ function addToWatchList(movieUuid){
         `
     }
 
-    if (localStorage.getItem(`movie-${movieUuid}`)) {
+    if (!localStorage.getItem(`movie-${movieUuid}`)) {
+        localStorage.setItem(`movie-${movieUuid}`, JSON.stringify(movieData))
+        // setTimeout(displaySuccessMessage,300)
+
+        document.getElementById(`movie-btn-${movieUuid}`).innerHTML = `
+            <div class="added-txt-container">
+                <img src="images/circle-check.png" alt='add button icon' class="add-icon" id="add-icon-${movieUuid}"/> 
+                <p class="added-txt">Added!</p>
+            </div>
+        `
+
+        // setTimeout(() => {
+        //     const popUp = document.querySelector('.added-pop-up, .error-pop-up');
+        //     if (popUp) {
+        //         popUp.classList.add('fade-out');
+        //     }
+        // }, 20000);
+
+    } else {
         document.getElementById(`watchlist-btn-${movieUuid}`).classList.add('error-style')
 
         setTimeout(displayErrorMessage,300)
@@ -106,35 +124,7 @@ function addToWatchList(movieUuid){
                 popUp.classList.add('fade-out');
             }
         }, 20000);
-        // localStorage.setItem(`movie-${movieUuid}`, JSON.stringify(movieData))
-        // setTimeout(displaySuccessMessage,300)
-
-        // document.getElementById(`movie-btn-${movieUuid}`).innerHTML = `
-        //     <div class="added-txt-container">
-        //         <img src="images/circle-check.png" alt='add button icon' class="add-icon" id="add-icon-${movieUuid}"/> 
-        //         <p class="added-txt">Added!</p>
-        //     </div>
-        // `
-
-        // setTimeout(() => {
-        //     const popUp = document.querySelector('.added-pop-up, .error-pop-up');
-        //     if (popUp) {
-        //         popUp.classList.add('fade-out');
-        //     }
-        // }, 20000);
     }
-
-    // } else {
-    //     document.getElementById(`watchlist-btn-${movieUuid}`).classList.add('error-style')
-
-    //     setTimeout(displayErrorMessage,300)
-    //     setTimeout(() => {
-    //         const popUp = document.querySelector('.added-pop-up, .error-pop-up');
-    //         if (popUp) {
-    //             popUp.classList.add('fade-out');
-    //         }
-    //     }, 20000);
-    // }
 }
 
 function getWatchlistHtml(){
